@@ -162,3 +162,34 @@ html, body {
         font-size: 0.9rem;
     }
 }
+header {
+    height: auto !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Garante que o conteúdo nunca fique escondido atrás do header */
+main {
+    margin-top: 120px; /* valor base para desktops */
+}
+
+/* Ajuste para tablets */
+@media (max-width: 900px) {
+    main {
+        margin-top: 150px;
+    }
+}
+
+/* Ajuste para celulares médios */
+@media (max-width: 600px) {
+    main {
+        margin-top: 170px;
+    }
+}
+
+/* Ajuste para celulares pequenos */
+@media (max-width: 420px) {
+    main {
+        margin-top: 190px;
+    }
+}
