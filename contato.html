@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="responsivo.css">
+  <style>
+    /* RESET */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    html, body { height: 100%; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height:1.6;
+      background:#f0f2f5;
+      color:#333;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* HEADER */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0px 30px; background:#fff;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      height: 80px;
+    }
+    .logo {display:flex; align-items:center; font-weight:600; font-size:1.2rem;}
+    .logo img {height: auto; max-width: 180px; margin-right:10px;}
+    .navbar ul {list-style:none; display:flex; gap:25px;}
+    .navbar a {
+      text-decoration:none; color:#000; font-weight:500;
+      position:relative; padding:5px; cursor:pointer;
+    }
+    .navbar a::after {
+      content:""; position:absolute; left:0; bottom:0;
+      width:0; height:2px; background:#4e2a84;
+      transition:0.3s;
+    }
+    .navbar a:hover::after, .navbar a.active::after { width:100%; }
+
+    /* CONTATO */
+    main {
+      flex:1;
+      display:flex; justify-content:center; align-items:center;
+      padding:20px;
+    }
+    .form-card {
+      background:#fff;
+      padding:40px 30px;
+      border-radius:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      max-width:500px;
+      width:100%;
+      border:1px solid #ddd;
+      text-align:center;
+      transition:box-shadow 0.3s;
+    }
+    .form-card:hover {
+      box-shadow:0 12px 25px rgba(0,0,0,0.15);
+    }
+    .form-card h1 {
+      margin-bottom:30px;
+      font-size:1.8rem;
+      color:#4e2a84;
+    }
+
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    /* LABEL + PLACEHOLDER ANIMADO */
+    .form-group {
+      position: relative;
+      width: 100%;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding:14px 12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:1rem;
+      transition:all 0.3s;
+      background:transparent;
+      resize:none;
+      overflow:hidden;
+    }
+    .form-group label {
+      position: absolute;
+      top:50%;
+      left:12px;
+      transform:translateY(-50%);
+      color:#aaa;
+      font-size:1rem;
+      pointer-events:none;
+      transition:0.3s;
+      background:#fff;
+      padding:0 4px;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group input:not(:placeholder-shown),
+    .form-group textarea:not(:placeholder-shown) {
+      border-color:#4e2a84;
+      box-shadow:0 0 8px rgba(78,42,132,0.2);
+    }
+    .form-group input:focus + label,
+    .form-group textarea:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top:-10px;
+      font-size:0.85rem;
+      color:#4e2a84;
+    }
+
+    textarea {
+      min-height:120px;
+      max-height:300px;
+    }
+
+    button {
+      background:#4e2a84;
+      color:#fff;
+      padding:14px;
+      border:none;
+      border-radius:8px;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    button:hover {
+      background:#3a2066;
+      transform:scale(1.03);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fff;
+      text-align:center;
+      padding:10px;
+      color:#555;
+      border-top:1px solid #ddd;
+    }
+
+footer p{
+  margin-top: 10px;
+}
+        .social-icons .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 3.5rem;
+            width: 3.5rem;
+            color: #4e2a84;
+            border-radius: 100%;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition:transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        
+        .social-icons .social-icon:hover {
+            background-color: #4e2a84;
+            color: #fff;
+            transform:scale(1.05); box-shadow:0 6px 14px rgba(0,0,0,0.3);
+            
+        }
+
+        .instagram-icon {
+            fill: #4e2a84;
+        }
+        
+        .social-icon-instagram:hover .instagram-icon {
+            fill: #fff;
+        }
+
+
+        .social-icons .social-icon:last-child {
+            margin-right: 0;
+        }
+
+        .svg-inline--fa {
+            display: var(--fa-display, inline-block);
+            height: 1em;
+            overflow: visible;
+            vertical-align: -0.125em;
+        }
+
+    @media (max-width: 600px) {
+      .form-card {padding:25px 20px;}
+      .form-card h1 {font-size:1.5rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png">
+      
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="inicio.html">INÍCIO</a></li>
+        <li><a href="sobre.html">SOBRE</a></li>
+        <li><a href="pessoas.html">PESSOAS</a></li>
+        <li><a href="quemsomos.html">QUEM SOMOS</a></li>
+        <li><a href="recursos.html">RECURSOS</a></li>
+        <li><a href="#home" class="active">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main>
+    <div class="form-card">
+      <h1>Fale Conosco</h1>
+      <form action="enviar.php" method="post">
+        <div class="form-group">
+          <input type="text" id="nome" name="nome" placeholder=" " required>
+          <label for="nome">Nome</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email">E-mail</label>
+        </div>
+        <div class="form-group">
+          <textarea id="mensagem" name="mensagem" placeholder=" " required></textarea>
+          <label for="mensagem">Mensagem</label>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Lab Juventude - Projeto Identidade de Gênero</p>
+    <div class="social-icons">
+            <a class="social-icon" href="https://www.linkedin.com/in/olimpic-union-1452a0305/" target="_blank">
+                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" data-prefix="fab"
+                    data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                    data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                    </path>
+                </svg>
+            </a>
+
+            <a class="social-icon social-icon-instagram" href="https://www.instagram.com/olimpicunionsprts/" target="_blank">
+                <svg class="svg-inline--fa" viewBox="0 0 169.063 169.063">
+                    <path class="instagram-icon" fill="white" d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752
+                        c25.727,0,46.656-20.93,46.656-46.655V46.655C169.063,20.93,148.133,0,122.406,0z M154.063,122.407
+                        c0,17.455-14.201,31.655-31.656,31.655H46.654C29.2,154.063,15,139.862,15,122.407V46.655C15,29.201,29.2,15,46.654,15h75.752
+                        c17.455,0,31.656,14.201,31.656,31.655V122.407z"></path>
+                    <path class="instagram-icon" fill="white"
+                        d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561
+                        C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561
+                        c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z">
+                    </path>
+                    <path class="instagram-icon" fill="white" d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78
+                        c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78
+                        C135.661,29.421,132.821,28.251,129.921,28.251z"></path>
+                </svg>
+            </a>
+
+
+            <a class="social-icon" href="https://twitter.com/OlimpicUnion" target="_blank">
+                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                    </path>
+                </svg>
+            </a>
+
+            <a class="social-icon" href="https://www.facebook.com/olimpics.union.sports/" target="_blank">
+                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" data-prefix="fab"
+                    data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                    data-fa-i2svg="">
+                    <path fill="currentColor"
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                    </path>
+                </svg>
+            </a>
+
+
+
+
+
+
+        </div>
+  </footer>
+
+  <!-- SCRIPT AUTORESIZE TEXTAREA -->
+  <script>
+    const textarea = document.getElementById('mensagem');
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    });
+  </script>
+
+<!--MENSAGEM DE FEEDBACK SOBRE O ENVIO DO EMAIL-->
+<script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData
+    });
+    const result = await response.text();
+    alert(result); // Mostra a mensagem retornada pelo PHP
+    if(response.ok) form.reset(); // Limpa o formulário se enviado com sucesso
+  } catch (error) {
+    alert("Erro ao enviar a mensagem.");
+  }
+});
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="responsivo.css">
+  <style>
+    /* RESET */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height:1.6;
+      background:#f9f9f9;
+      color:#333;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* HEADER */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0px 30px; background:#fff;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      height: 80px;
+    }
+    .logo {display:flex; align-items:center; font-weight:600; font-size:1.2rem;}
+    .logo img {height: auto; max-width: 180px; margin-right:10px;}
+    .navbar ul {list-style:none; display:flex; gap:25px;}
+    .navbar a {
+      text-decoration:none; color:#000; font-weight:500;
+      position:relative; padding:5px;
+    }
+    .navbar a::after {
+      content:""; position:absolute; left:0; bottom:0;
+      width:0; height:2px; background:#4e2a84;
+      transition:0.3s;
+    }
+    .navbar a:hover::after {width:100%;}
+    .navbar a.active::after { width:100%; } /* deixa o item ativo sublinhado */
+    /* SLIDER */
+    .slider {
+      position:relative; max-width:1000px;
+      margin:140px auto; border-radius:15px;
+      background:#fff; padding:40px 20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+    .slides {position:relative;}
+    .slide {display:none; opacity:0; transition:opacity 1s ease-in-out, transform 1s ease-in-out; transform:translateX(50px);}
+    .slide.active {display:block; opacity:1; transform:translateX(0);}
+    .slide img {
+      width:200px; height:200px; object-fit:cover;
+      border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom:20px;
+      margin-top: 40px;
+      transition:transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .slide img:hover {transform:scale(1.05); box-shadow:0 6px 14px rgba(0,0,0,0.3);}
+    .descricao h2 {font-size:1.6rem; color:#4e2a84; margin-bottom:10px;}
+    .descricao p {max-width:800px; margin:0 auto; color:#333;margin-top: 30px;}
+
+    /* Controles */
+    .prev, .next {
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(0,0,0,0.5); color:#fff;
+      border:none; padding:10px; cursor:pointer;
+      border-radius:50%; font-size:18px;
+      transition:background 0.3s, transform 0.2s;
+    }
+    .prev:hover, .next:hover {background:#4e2a84;transform:scale(1.1);}
+    .prev {left:10px;}
+    .next {right:10px;}
+    .dots {text-align:center; margin-top:15px;}
+    .dots button {
+      height:12px; width:12px; margin:0 5px;
+      border-radius:50%; border:none;
+      background:#bbb; cursor:pointer;
+      transition:background 0.3s, transform 0.3s;
+    }
+    .dots button:hover {transform:scale(1.2);}
+    .dots button.active {background:#4e2a84;}
+
+    /* GALERIA */
+    .galeria {padding:40px; text-align:center;}
+    .galeria h2 {margin-bottom:20px; color:#4e2a84;}
+    .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+    .card {
+      background:#fff; padding:20px; border-radius:10px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.1);
+      transition:transform 0.4s ease, box-shadow 0.4s ease;
+    }
+   .cards {
+  display: flex;
+  justify-content: center;   /* centraliza os cards no meio */
+  gap: 40px;                 /* espaço entre os dois */
+  flex-wrap: wrap;           /* se a tela for pequena, quebra para baixo */
+  margin-bottom: 100px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px; /* 👈 limita largura do card */
+  width: 100%;
+  flex: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  max-width: 200px; /* 👈 controla a largura da imagem */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #4e2a84;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.divider {
+  
+  height: 2px;                   /* grossura */
+  background: linear-gradient(
+    to right, #4e2a84, #a67ecf
+  );                             /* gradiente */
+  margin: 60px auto;             /* espaçamento em cima e embaixo */
+  width: 90%;                    /* largura menor que 100% */
+  border-radius: 2px;            /* bordas suaves */
+}
+
+
+
+
+    /* FOOTER */
+    footer {
+      background:#fff;
+      text-align:center;
+      padding:20px;
+      color:#555;
+      border-top:1px solid #ddd;
+      margin-top:auto; /* 👈 faz o footer colar no fim */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Projeto Lab Juventude">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="./inicio.html">INÍCIO</a></li>
+        <li><a href="./sobre.html">SOBRE</a></li>
+        <li><a href="#home" class="active">PESSOAS</a></li>
+        <li><a href="./quemsomos.html">QUEM SOMOS</a></li>
+        <li><a href="./recursos.html">RECURSOS</a></li>
+        <li><a href="./contato.html">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SLIDER UNIFICADO -->
+  <section id="slider" class="slider">
+    <div class="slides">
+      <h2 style="margin-top:10px; font-size:1.5rem; color:#4e2a84;">Pessoas famosas no meio da diversidade de identidade de gênero</h2>
+      <div class="slide active">
+        <a href="https://www.instagram.com/linndaquebrada" target="blank"><img src="images/linn.jpg"></a>
+        <div class="descricao">
+          <h2>Linn da Quebrada</h2>
+          <p>Artista, cantora e atriz brasileira que luta pela visibilidade trans e travesti.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="https://www.instagram.com/pabllovittar" target="blank"><img src="images/pabllo.jpg"></a>
+        <div class="descricao">
+          <h2>Pabllo Vittar</h2>
+          <p>Cantora drag queen, um dos maiores nomes da música pop brasileira.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="https://www.instagram.com/laerteminotaura" target="blank"><img src="images/laerte.jpg"></a>
+        <div class="descricao">
+          <h2>Laerte Coutinho</h2>
+          <p>Cartunista e ativista trans brasileira, referência na luta por direitos LGBTQIAPN+.</p>
+        </div>
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </section>
+
+
+  <hr class="divider">
+  <!-- GALERIA PERSONAS -->
+  <section id="galeria" class="galeria">
+    <h2>Personas</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/Clara.png">
+        <h3>Clara</h3>
+        <p>20 anos, não-binário, estudante de Design Gráfico. Comunicativa, engajada e busca espaços inclusivos no mercado.</p>
+      </div>
+      <div class="card">
+        <img src="images/Paulo.png">
+        <h3>Paulo</h3>
+        <p>25 anos, homem trans, formado em Administração. Introvertido, leitor assíduo, enfrenta dificuldades de inserção no mercado formal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Lab Juventude - Projeto Identidade de Gênero</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.dots');
+    let index = 0;
+
+    // Criar dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = document.querySelectorAll('.dots button');
+
+    function showSlide(i){
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+      index = i;
+    }
+
+    function showNext(){ index = (index+1)%slides.length; showSlide(index);} 
+    function showPrev(){ index = (index-1+slides.length)%slides.length; showSlide(index);} 
+
+    next.addEventListener('click', showNext);
+    prev.addEventListener('click', showPrev);
+
+    setInterval(showNext, 4000); // troca automática
+
+// Galeria slide-in
+    const galeria = document.querySelector('.galeria');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, {threshold: 0.2});
+
+    observer.observe(galeria);
+
+  </script>
+</body>
+</html>

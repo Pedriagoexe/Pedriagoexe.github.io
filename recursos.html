@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursos e Apoio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="responsivo.css">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      height: 80px;
+    }
+
+    .logo {display:flex; align-items:center; font-weight:600; font-size:1.2rem;}
+    
+    
+    
+    .logo img {
+      height: auto;
+      max-width: 180px;
+      margin-right: 10px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      position: relative;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #4e2a84;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
+
+    /* LINKS ÚTEIS */
+    .links-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+
+    }
+
+    .links-section h1 {
+      color: #4e2a84;
+      margin-bottom: 20px;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .link-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .link-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .link-card a {
+      display: block;
+      color: #4e2a84;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .link-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* DEPOIMENTOS */
+    .depoimentos {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .depoimentos h2 {
+      color: #4e2a84;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .pergunta-bloco {
+      margin-bottom: 50px;
+      border-top: 1px solid #ddd;
+      padding-top: 30px;
+    }
+
+    .pergunta-bloco h3 {
+      color: #4e2a84;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .depo-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px; /* Altura mínima igual para todos */
+    }
+
+    .depo-card:hover {
+      transform: scale(1.02);
+    }
+
+    .depo-card p {
+      font-style: italic;
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+
+    .depo-card span {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: right;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" />
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="inicio.html">INÍCIO</a></li>
+        <li><a href="sobre.html">SOBRE</a></li>
+        <li><a href="./pessoas.html">PESSOAS</a></li>
+        <li><a href="quemsomos.html">QUEM SOMOS</a></li>
+        <li><a href="recursos.html" class="active">RECURSOS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- LINKS ÚTEIS -->
+  <section class="links-section">
+    <h1>Links Úteis</h1>
+    <div class="links-grid">
+      <div class="link-card">
+        <a href="https://www.casaum.org/" target="_blank">ONG Casa Um</a>
+      </div>
+      <div class="link-card">
+        <a href="https://www.sostrans.org/" target="_blank">Grupo de Apoio Trans</a>
+      </div>
+      <div class="link-card">
+        <a href="https://www.gov.br/mdh/pt-br/ondh/denuncie" target="_blank">Canal de Denúncia</a>
+      </div>
+      <div class="link-card">
+        <a href="https://www.transempregos.com.br" target="_blank">TransEmpregos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos">
+    <h2>Perguntas e Respostas</h2>
+
+    <!-- PERGUNTA 1 -->
+    <div class="pergunta-bloco">
+      <h3>Quais sugestões você daria para tornar o mercado de trabalho mais inclusivo para pessoas trans na Zona Oeste?</h3>
+      <div class="depoimentos-grid">
+        <div class="depo-card">
+          <p>"Se eu fosse a chefe, antes mesmo de começar a contratar, iria ter uma especificação sobre a contratação de pessoas trans. Cabe à pessoa aceitar ter uma rotina assim. Todo trabalho tem que ter o respeito mútuo, independente de qualquer coisa."</p>
+          <span>Anônimo, 22 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Acho que as empresas poderiam conhecer melhor a respeito e não fechar a cabeça para a binaridade. Criar empresas mais inclusivas."</p>
+          <span>Anônimo, 22 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Vagas de emprego destinadas diretamente a pessoas trans. Bolsas para capacitação profissional em cursos técnicos e até mesmo turmas em cursos técnicos da Faetec, por exemplo."</p>
+          <span>Anônimo, 18 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Deixar na descrição que apoiam e respeitam pessoas trans, além de que seria mais confortável que as empresas realmente tivessem vagas exclusivas para trans."</p>
+          <span>Anônimo, 18 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Na minha experiência, apesar de ainda não ter conseguido participar de plataformas de apoio, muitas pessoas trans próximas de mim conseguiram oportunidades por conta de grupos como o Transgarçonne."</p>
+          <span>Anônimo, 19 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Inclua em suas vidas. Quanto mais tornamos normal a existência dessas pessoas, mais claro para a gente fica. As contas não vêm com desconto por ser trans. Pagamos o mesmo preço."</p>
+          <span>Anônimo, 23 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pergunta-bloco">
+      <h3>Dado o que você já viveu ou presenciou, por que você considera que não há vagas de emprego suficientes que sejam seguras e inclusivas para pessoas trans na Zona Oeste?</h3>
+      <div class="depoimentos-grid">
+        <div class="depo-card">
+          <p>"É bem raro achar ambientes que realmente acolham pessoas trans, e nas poucas vagas que têm, é um processo seletivo muito difícil. Além disso Há vários relatos de pessoas trans que são desclassificadas em entrevistas de emprego apenas pela sua orientação de gênero."</p>
+          <span>Anônimo, 22 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Creio que é difícil precisar uma solução específica porque é um problema que atravessa tantas camadas, tanto estruturais quanto subjetivas e outras. Há muita discriminação na parte dos contratantes que deixa os candidatos até mesmo acuados."</p>
+          <span>Anônimo, 19 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Quando somos expostos e capazes e a empresa é engessada, não temos vantagem alguma. Pode existir qualquer tipo de processo, mas quando o CEO não quer, não mudará o clima de sua empresa. Existem os processos, mas precisamos saber se as empresas estão preparando os seus internos para receber esse público, do contrário cairemos no turnover contínuo... "</p>
+          <span>Anônimo, 21 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Existem processos de diversidade, porém sempre pedem mais qualificações do que as pessoas têm... Querem profissionais bilíngues, porém no público só aprendemos verbo "to be". Às vezes me pergunto: será que o pagamento será em dólares? Existem vagas de analista com cobrança de sênior, mas o pagamento é de júnior. Além disso, o tratamento quando se é estagiário é trabalho e trabalho, e muitos não são efetivados. "</p>
+          <span>Anônimo, 20 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"No contrato de admissão, vêm alguns documentos antes da pessoa entrar e, em uma dessas papeladas, há a informação sobre o gênero e a vestimenta. O contrato é confirmado e a pessoa do gênero trans começa a trabalhar. No começo, não irá ter nenhum comentário, mas depois de alguns meses isso vira um bafafá... não pela roupa, mas sim pelo gênero (já presenciei isso). Seu contrato pode até terminar antes do prazo por conta disso. Eles querem que os empregados seja a cara da empresa. "</p>
+          <span>Anônimo, 19 anos</span>
+        </div>
+        <div class="depo-card">
+          <p>"Penso na questão dos acidentes que acontecem com essas pessoas. Não tenho nenhuma pessoa próxima não cis, mas os noticiários de morte me preocupam... Na internet dizem tanto de igualdade, de acolhimento, mas pessoalmente já é outra coisa."</p>
+          <span>Anônimo, 18 anos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Lab Juventude - Projeto Identidade de Gênero</p>
+  </footer>
+</body>
+
+</html>

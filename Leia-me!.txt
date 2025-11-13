@@ -1,0 +1,6 @@
+Passo a passo:
+1- Baixar a pasta "Site" com todo seu conteúdo
+2- Abrir a pasta site
+3- Executar o arquivo "Inicio.html"(duplo clique ou clicar em abrir)
+4- o site irá abrir numa página do navegador
+:)
