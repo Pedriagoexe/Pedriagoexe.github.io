@@ -193,3 +193,107 @@ main {
         margin-top: 190px;
     }
 }
+
+/* ======================================================
+   MENU HAMBÚRGUER (MOBILE)
+   ====================================================== */
+
+/* Ícone hambúrguer */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mostrar hambúrguer e esconder navbar em telas pequenas */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar {
+        display: none !important;
+    }
+
+    header {
+        justify-content: space-between !important;
+        gap: 10px;
+        padding: 15px 25px !important;
+    }
+}
+
+/* Menu lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;     /* escondido */
+    width: 260px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 9999;
+    transition: left 0.3s ease;
+}
+
+/* Quando aberto */
+.side-menu.active {
+    left: 0;
+}
+
+/* Botão de fechar */
+.side-menu .close-btn {
+    font-size: 2rem;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Links */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.side-menu ul li {
+    margin: 15px 0;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #4e2a84;
+    font-weight: 600;
+}
+
+.side-menu ul li a:hover {
+    color: #a67ecf;
+}
+
+/* ======================================================
+   AJUSTES DO MAIN EM MOBILE PARA NÃO SOBREPOR
+   ====================================================== */
+
+main {
+    margin-top: 120px;
+}
+
+@media (max-width: 900px) {
+    main {
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        margin-top: 170px;
+    }
+}
+
+@media (max-width: 420px) {
+    main {
+        margin-top: 185px;
+    }
+}
