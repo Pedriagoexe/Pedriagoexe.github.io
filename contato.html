@@ -206,6 +206,10 @@ footer p{
       <img src="logo.png">
       
     </div>
+    <div class="hamburger">
+      ☰
+   </div>
+    
     <nav class="navbar">
       <ul>
         <li><a href="index.html">INÍCIO</a></li>
@@ -217,6 +221,18 @@ footer p{
       </ul>
     </nav>
   </header>
+ 
+  <nav class="side-menu">
+  <div class="close-btn">✕</div>
+  <ul>
+    <li><a href="#home">INÍCIO</a></li>
+    <li><a href="#sobre">SOBRE</a></li>
+    <li><a href="pessoas.html">PESSOAS</a></li>
+    <li><a href="quemsomos.html">QUEM SOMOS</a></li>
+    <li><a href="recursos.html">RECURSOS</a></li>
+    <li><a href="contato.html">CONTATO</a></li>
+  </ul>
+</nav>
 
   <!-- CONTEÚDO -->
   <main>
@@ -328,6 +344,31 @@ form.addEventListener("submit", async (e) => {
     alert("Erro ao enviar a mensagem.");
   }
 });
+
+  // MENU HAMBÚRGUER
+  const hamburger = document.querySelector('.hamburger');
+  const sideMenu = document.querySelector('.side-menu');
+  const closeBtn = document.querySelector('.side-menu .close-btn');
+
+  if (hamburger && sideMenu && closeBtn) {
+
+      hamburger.addEventListener('click', () => {
+          sideMenu.classList.add('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+          sideMenu.classList.remove('active');
+      });
+
+      // Fechar ao clicar em um link
+      document.querySelectorAll('.side-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+              sideMenu.classList.remove('active');
+          });
+      });
+  }
+
+});
 </script>
 
 
@@ -336,5 +377,6 @@ form.addEventListener("submit", async (e) => {
 
 </body>
 </html>
+
 
 
